@@ -1,4 +1,3 @@
-/*
 package com.mrogotnev.jpa_spring.entity;
 
 import jakarta.persistence.*;
@@ -8,26 +7,27 @@ import java.util.Set;
 
 @Data
 @Entity
+@Table(name = "projects")
 public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_project")
+    @Column(name = "id_project", nullable = false)
     private Integer id;
-    @Column(name = "prj_name")
+    @Column(name = "prj_name", nullable = false)
     private String ProjectName;
-    @Column(name = "prj_status")
+    @Column(name = "prj_status", nullable = false)
     private boolean status;
     @ManyToOne
-    @JoinColumn(name = "id_client")
+    @JoinColumn(name = "id_client", nullable = false)
     private Client client;
 
-    @ManyToMany
+    /*@ManyToMany
     @JoinTable (
             name = "prj_to_employees_many_to_many",
             joinColumns = @JoinColumn(name = "id_project"),
             inverseJoinColumns = @JoinColumn(name = "id_employee")
     )
-    Set<Employee> employeesOnProject;
+    Set<Employee> employeesOnProject;*/
 
     public Project() {
     }
@@ -39,4 +39,3 @@ public class Project {
         this.client = client;
     }
 }
-*/
