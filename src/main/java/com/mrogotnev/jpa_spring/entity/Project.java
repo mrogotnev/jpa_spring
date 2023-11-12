@@ -12,7 +12,7 @@ public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_project", nullable = false)
-    private Integer id;
+    private Long id;
     @Column(name = "prj_name", nullable = false)
     private String ProjectName;
     @Column(name = "prj_status", nullable = false)
@@ -21,18 +21,10 @@ public class Project {
     @JoinColumn(name = "id_client", nullable = false)
     private Client client;
 
-    /*@ManyToMany
-    @JoinTable (
-            name = "prj_to_employees_many_to_many",
-            joinColumns = @JoinColumn(name = "id_project"),
-            inverseJoinColumns = @JoinColumn(name = "id_employee")
-    )
-    Set<Employee> employeesOnProject;*/
-
     public Project() {
     }
 
-    public Project(Integer id, String ProjectName, boolean status, Client client) {
+    public Project(Long id, String ProjectName, boolean status, Client client) {
         this.id = id;
         this.ProjectName = ProjectName;
         this.status = status;

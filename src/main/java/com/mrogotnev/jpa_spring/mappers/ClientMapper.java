@@ -2,12 +2,14 @@ package com.mrogotnev.jpa_spring.mappers;
 
 import com.mrogotnev.jpa_spring.dto.OldClientJSONFormat;
 import com.mrogotnev.jpa_spring.entity.Client;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ClientMapper {
     public Client oldJsonToEntityClient(OldClientJSONFormat oldClientJSONFormat) {
         Client client = new Client();
         if (oldClientJSONFormat.getId() != null) {
-            client.setId(oldClientJSONFormat.getId());
+            client.setId((long) oldClientJSONFormat.getId());
         }
         client.setFirstName(oldClientJSONFormat.getFirstName());
         client.setLastName(oldClientJSONFormat.getLastName());

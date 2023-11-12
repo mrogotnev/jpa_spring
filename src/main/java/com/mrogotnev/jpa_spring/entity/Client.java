@@ -10,12 +10,10 @@ public class Client extends Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_client")
-    private Integer id;
+    private Long id;
     @Column(name = "company_name")
     private String companyName;
 
-    /*@OneToMany(mappedBy = "client")
-    Set<Project> projectSet;*/
 
     public Client() {
     }
