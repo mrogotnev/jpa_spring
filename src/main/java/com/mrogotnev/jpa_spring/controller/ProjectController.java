@@ -29,7 +29,7 @@ public class ProjectController {
     }
 
     @PutMapping("/updateProject/{id}")
-    public void updateProject(@PathVariable Long id, @RequestBody Project project) {
+    public void updateProject(@PathVariable Long id, @RequestBody OldProjectJSONFormat project) {
         projectService.updateProject(id, project);
     }
 

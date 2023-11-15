@@ -40,7 +40,8 @@ public class ProjectService {
         return project.getId();
     }
 
-    public void updateProject(Long id, Project project) {
+    public void updateProject(Long id, OldProjectJSONFormat oldProject) {
+        Project project = projectMapper.oldProjectJsonToEntityProject(oldProject);
         project.setId(id);
         projectDao.save(project);
     }

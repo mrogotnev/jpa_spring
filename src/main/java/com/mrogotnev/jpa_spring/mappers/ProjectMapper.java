@@ -20,11 +20,10 @@ public class ProjectMapper {
 
     public OldProjectJSONFormat entityProjectToOldProjectJson(Project project) {
         OldProjectJSONFormat oldProjectJSONFormat = new OldProjectJSONFormat();
+        oldProjectJSONFormat.setId(project.getId());
         oldProjectJSONFormat.setClientId(project.getClient().getId());
         oldProjectJSONFormat.setProjectName(project.getProjectName());
-        oldProjectJSONFormat.setStatus(oldProjectJSONFormat.isStatus());
+        oldProjectJSONFormat.setStatus(project.isStatus());
         return oldProjectJSONFormat;
     }
-
-
 }
