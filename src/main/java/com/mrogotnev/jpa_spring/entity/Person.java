@@ -7,6 +7,7 @@ import lombok.Data;
 @MappedSuperclass
 public abstract class Person {
     private String firstName;
+    @Column(name = "second_name")
     private String lastName;
     public Person() {
     }

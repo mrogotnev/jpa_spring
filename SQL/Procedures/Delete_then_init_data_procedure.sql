@@ -35,6 +35,7 @@ BEGIN
     (2, 2), (2, 6), (2, 8), (2, 9);
 END//
 
+SET SQL_SAFE_UPDATES = 0;
 CALL delete_then_init_data();
 	SELECT * FROM jdbc_schema.clients;
     SELECT * FROM jdbc_schema.employees;

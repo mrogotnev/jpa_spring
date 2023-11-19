@@ -21,6 +21,10 @@ public class Employee extends Person {
     /*@ManyToMany(mappedBy = "employeesOnProject")
     @JoinColumn(name = "id_project", nullable = false)
     Set<Project> projectsCurrentEmployee;*/
+
+    public Employee() {
+    }
+
     public Employee(String firstName, String lastName, JobTitle jobTitle) {
         super(firstName, lastName);
         this.jobTitle = jobTitle;
