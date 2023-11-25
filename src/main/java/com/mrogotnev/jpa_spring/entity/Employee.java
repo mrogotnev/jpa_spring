@@ -18,9 +18,13 @@ public class Employee extends Person {
     @Enumerated(EnumType.STRING)
     private JobTitle jobTitle;
 
-    /*@ManyToMany(mappedBy = "employeesOnProject")
-    @JoinColumn(name = "id_project", nullable = false)
-    Set<Project> projectsCurrentEmployee;*/
+    @ManyToMany
+    @JoinTable(
+            name = "prj_to_employees_many_to_many",
+            joinColumns = @JoinColumn(name = "id_employee"),
+            inverseJoinColumns = @JoinColumn(name = "id_project")
+    )
+    Set<Project> projectsCurrentEmployee;
 
     public Employee() {
     }

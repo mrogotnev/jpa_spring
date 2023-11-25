@@ -21,6 +21,9 @@ public class Project {
     @JoinColumn(name = "id_client", nullable = false)
     private Client client;
 
+    @ManyToMany(mappedBy = "projectsCurrentEmployee")
+    Set<Employee> employeesOnCurrentProject;
+
     public Project() {
     }
 
