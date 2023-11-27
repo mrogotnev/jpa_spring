@@ -11,7 +11,7 @@ import java.util.Set;
 @Table(name = "employees")
 public class Employee extends Person {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id_employee")
     private Long id;
     @Column(name = "job_title", columnDefinition = "ENUM('Developer', 'Tester', 'Admin', 'Manager')")

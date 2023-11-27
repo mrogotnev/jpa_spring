@@ -10,7 +10,7 @@ import java.util.Set;
 @Table(name = "projects")
 public class Project {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_project", nullable = false)
     private Long id;
     @Column(name = "prj_name", nullable = false)

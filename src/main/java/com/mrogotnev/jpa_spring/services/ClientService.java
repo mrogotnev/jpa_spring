@@ -31,7 +31,6 @@ public class ClientService {
     public Long createClient(OldClientJSONFormat oldClientJSONFormat) {
         Client client = clientMapper.oldJsonToEntityClient(oldClientJSONFormat);
         entityManager.persist(client);
-        entityManager.flush();
         return client.getId();
     }
 
